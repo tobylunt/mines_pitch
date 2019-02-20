@@ -22,29 +22,85 @@
 		</script>
 	</head>
 	<body>
+
 		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-				<section>Slide 3</section>
-			</div>
-		</div>
+				<section data-background-transition="slide" data-background="assets/mine_bg.png">
+					<h1 style="color:orange; text-shadow: 2px 2px 2px #000000;">Mines from space</h1>
+					<h3 style="color:white; text-shadow: 2px 2px 2px #000000;">The Data Incubator</h3>
+					<p>
+						<small>By <a href="http://tobiaslunt.com">Tobias Lunt</a></small>
+					</p>
+				</section>
+				<section>
+					<h2>Who cares about mines?</h2>
+					<ul>
+						<li>Fill this in</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Initial work</h2>
+					<ul>
+						<li>Transferred Resnet to classify mines specifically</li>
+						<li>Used > 30GB of kaggle imagery</li>
+						<li>Promising early results:</li>
+					</ul>
+					<img width="300px" data-src="assets/previous_confusion.png" alt="Previous work">
+				</section>
+				<section>
+					<p style="height:15px;"><small>Decent initial success</small></p>
+					<a href="https://github.com/tobylunt/india_mines/blob/master/india_mines.ipynb">
+					  <img width="70%" data-src="assets/previous_results.png" alt="Previous work">
+					</a>
+				</section>
+				<section id="fragments">
+					<h2>Since then</h2>
+					<ul>
+						<li>Scraped an additional 60GB of Sentinel satellite imagery - best data available to the public</li>
+						<li class="fragment">Created image chips of known mines in India</li>
+						<li class="fragment">Automated all spatial and image processing</li>
+					</ul>
+				</section>
+				<section>
+					<p style="height:15px;"><small>Sentinel-2 image example (India)</small></p>
+					<img width="60%" data-src="assets/sentinel_example.png" alt="Sentinel">
+				</section>
+				<section>
+					<p style="height:15px;"><small>Automated html synthesis for visual review of new chips</small></p>
+					<a href="http://caligari.dartmouth.edu/~lunt/png/mine_chips/**mine_chips.html">
+					  <img width="70%" data-src="assets/new_chips.png" alt="Previous work">
+					</a>
+				</section>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
+			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
 		</script>
+
 	</body>
 </html>
