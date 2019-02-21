@@ -27,14 +27,14 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background-transition="slide" data-background="assets/mine_bg.jpg">
+				<section data-background-transition="slide" data-background="assets/mine_bg.jpg" data-autoslide="20000">
 					<h1 style="color:orange; text-shadow: 2px 2px 2px #000000;">Mines from space</h1>
 					<h3 style="color:white; text-shadow: 2px 2px 2px #000000;">The Data Incubator</h3>
 					<p>
 						<small>By <a href="http://tobiaslunt.com">Tobias Lunt</a></small>
 					</p>
 				</section>
-				<section>
+				<section data-autoslide="20000">
 					<h2>Who cares about mines?</h2>
 					<img width="150px" style="background:none; border:none; box-shadow:none;" data-src="assets/fbi.png" alt="usaid">
 					<br>
@@ -51,7 +51,7 @@
 					</ul>
 					<img width="300px" data-src="assets/previous_confusion.jpg" alt="Previous work">
 				</section>
-				<section>
+				<section data-autoslide="10000">
 					<p style="height:15px;"><small>Decent initial success</small></p>
 					<a href="https://github.com/tobylunt/india_mines/blob/master/india_mines.ipynb">
 					  <img width="70%" data-src="assets/previous_results.jpg" alt="Previous work">
@@ -60,29 +60,26 @@
 				<section>
 					<h2>Since then</h2>
 					<ul>
-						<li>Scraped an additional 60GB of Sentinel satellite imagery - best data available to the public</li>
-						<li class="fragment">Created image chips of known mines in India</li>
-						<li class="fragment">Approximately 7200 new mine images, more than doubling the training set</li>
-						<li class="fragment"><a href="https://github.com/tobylunt/india_mines/blob/master/scrape_sentinel_images.py">Automated</a> all spatial and image processing</li>
+						<li>Scraping an additional 60GB of Sentinel satellite imagery - best data available to the public</li>
+						<li>Creating image chips of known mines in India</li>
+						<li>Approximately 7200 new mine images, more than doubling the training set</li>
+						<li><a href="https://github.com/tobylunt/india_mines/blob/master/scrape_sentinel_images.py">Automated</a> all spatial and image processing</li>
 					</ul>
-				</section>
-				<section>
-					<p style="height:15px;"><small>Sentinel-2 image example (India)</small></p>
-					<img width="60%" data-src="assets/sentinel_example.jpg" alt="Sentinel">
 				</section>
 				<section>
 					<p style="height:15px;"><small>Automated html synthesis for visual review of new chips</small></p>
 					<a href="http://caligari.dartmouth.edu/~lunt/png/mine_chips/**mine_chips.html">
-					  <img width="50%" data-src="assets/new_chips.jpg" alt="Previous work">
+					  <img width="50%" data-src="assets/new_chips.jpg" alt="New chips">
 					</a>
 				</section>
 				<section>
 					<h2>Next steps</h2>
 					<ul>
 						<li>Downloading and processing still underway, will finish in a day or two</li>
-						<li class="fragment">Finish setting up environment on Google Cloud</li>
-						<li class="fragment">Scrape and create chips for all of India (test set)</li>
-						<li class="fragment">Begin training!</li>
+						<li>Finish setting up environment on Google Cloud</li>
+						<li>Scrape and create chips for all of India (test set)</li>
+						<li>Begin training!</li>
+						<li>Visualize findings - web app and/or 1-pager</li>
 					</ul>
 				</section>
 				<section>
@@ -100,7 +97,7 @@
 				progress: true,
 				history: true,
 				center: true,
-
+                                autoSlide: 30000,
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
